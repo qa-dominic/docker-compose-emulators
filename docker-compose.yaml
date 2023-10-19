@@ -1,0 +1,93 @@
+version: '3'
+services:
+  s10:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6080:6080
+      - 5554:5554
+      - 5555:5555
+    environment:
+      - EMULATOR_DEVICE=Samsung Galaxy S10
+      - WEB_VNC=true
+      
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm
+  s9:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6081:6080
+      - 5556:5554
+      - 5557:5555
+    environment:
+      - EMULATOR_DEVICE=Samsung Galaxy S9
+      - WEB_VNC=true
+      
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm
+  s8:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6082:6080
+      - 5558:5554
+      - 5559:5555
+    environment:
+      - EMULATOR_DEVICE=Samsung Galaxy S8
+      - WEB_VNC=true
+      
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm
+  s7:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6083:6080
+      - 5560:5554
+      - 5561:5555
+    environment:
+      - EMULATOR_DEVICE=Samsung Galaxy S7
+      - WEB_VNC=true
+      
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm
+
+  s7-edge:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6083:6080
+      - 5560:5554
+      - 5561:5555
+    environment:
+      - EMULATOR_DEVICE=Samsung Galaxy S7 Edge
+      - WEB_VNC=true
+      
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm      
+  s6:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6083:6080
+      - 5560:5554
+      - 5561:5555
+    environment:
+      - EMULATOR_DEVICE=Samsung Galaxy S6
+      - WEB_VNC=true
+      
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm      

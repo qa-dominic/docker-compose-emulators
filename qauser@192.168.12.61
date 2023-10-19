@@ -1,0 +1,118 @@
+version: '3'
+services:
+  s10:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6080:6080
+      - 5554:5554
+      - 5555:5555
+    environment:
+      - EMULATOR_DEVICE=Samsung Galaxy S10
+      - WEB_VNC=true
+      - Appium=true
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm
+    depends_on:
+      - appium
+      - selenium-hub
+    command: >
+      bash -c "
+        sleep 10s &&
+        emulator -avd samsung_galaxy_s10_13.0 &&
+        docker cp mlwallet-android.apk dockeremulator_s10_1:/home/androidusr/ &&     
+        adb install mlwallet-android.apk
+      "
+  s9:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6081:6080
+      - 5556:5554
+      - 5557:5555
+    environment:
+      - EMULATOR_DEVICE=Samsung Galaxy S9
+      - WEB_VNC=true
+      - Appium=true
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm
+    depends_on:
+      - appium
+      - selenium-hub
+     command: >
+      bash -c "
+        sleep 10s &&
+        emulator -avd samsung_galaxy_s9_13.0 &&
+        docker cp mlwallet-android.apk dockeremulator_s9_1:/home/androidusr/ &&     
+        adb install mlwallet-android.apk
+      "
+  s8:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6082:6080
+      - 5558:5554
+      - 5559:5555
+    environment:
+      - EMULATOR_DEVICE=Samsung Galaxy S8
+      - WEB_VNC=true
+      - Appium=true
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm
+    depends_on:
+      - appium
+      - selenium-hub
+    command: >
+      bash -c "
+        sleep 10s &&
+        emulator -avd samsung_galaxy_s8_13.0 &&
+        docker cp mlwallet-android.apk dockeremulator_s8_1:/home/androidusr/ &&     
+        adb install mlwallet-android.apk
+      "
+  s7:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6083:6080
+      - 5560:5554
+      - 5561:5555
+    environment:
+      - EMULATOR_DEVICE=Samsung Galaxy S7
+      - WEB_VNC=true
+      - Appium=true
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm
+    depends_on:
+      - appium
+      - selenium-hub
+    command: >
+      bash -c "
+        sleep 10s &&
+        emulator -avd samsung_galaxy_s7_13.0 &&
+        docker cp mlwallet-android.apk dockeremulator_s7_1:/home/androidusr/ &&     
+        adb install mlwallet-android.apk
+      "
+
+  appium:
+    image: appium/appium
+    privileged: true
+    ports:
+      - 4723:4723
+    volumes:
+      - /path/to/appium/config:/root/.appium
+    depends_on:
+      - selenium-hub
+
+  selenium-hub:
+    image: selenium/hub
+    privileged: true
+    ports:
+      - 4444:4444    
