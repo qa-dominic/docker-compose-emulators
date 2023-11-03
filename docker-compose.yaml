@@ -65,9 +65,9 @@ services:
     image: budtmo/docker-android:emulator_13.0
     privileged: true
     ports:
-      - 6083:6080
-      - 5560:5554
-      - 5561:5555
+      - 6084:6080
+      - 5562:5554
+      - 5563:5555
     environment:
       - EMULATOR_DEVICE=Samsung Galaxy S7 Edge
       - WEB_VNC=true
@@ -80,9 +80,9 @@ services:
     image: budtmo/docker-android:emulator_13.0
     privileged: true
     ports:
-      - 6083:6080
-      - 5560:5554
-      - 5561:5555
+      - 6085:6080
+      - 5564:5554
+      - 5565:5555
     environment:
       - EMULATOR_DEVICE=Samsung Galaxy S6
       - WEB_VNC=true
