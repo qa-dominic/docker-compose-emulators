@@ -9,8 +9,7 @@ services:
       - 5555:5555
     environment:
       - EMULATOR_DEVICE=Samsung Galaxy S10
-      - WEB_VNC=true
-      
+      - WEB_VNC=true    
     volumes:
       - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
     devices:
@@ -24,8 +23,7 @@ services:
       - 5557:5555
     environment:
       - EMULATOR_DEVICE=Samsung Galaxy S9
-      - WEB_VNC=true
-      
+      - WEB_VNC=true    
     volumes:
       - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
     devices:
@@ -39,8 +37,7 @@ services:
       - 5559:5555
     environment:
       - EMULATOR_DEVICE=Samsung Galaxy S8
-      - WEB_VNC=true
-      
+      - WEB_VNC=true    
     volumes:
       - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
     devices:
@@ -54,8 +51,7 @@ services:
       - 5561:5555
     environment:
       - EMULATOR_DEVICE=Samsung Galaxy S7
-      - WEB_VNC=true
-      
+      - WEB_VNC=true     
     volumes:
       - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
     devices:
@@ -70,8 +66,7 @@ services:
       - 5563:5555
     environment:
       - EMULATOR_DEVICE=Samsung Galaxy S7 Edge
-      - WEB_VNC=true
-      
+      - WEB_VNC=true     
     volumes:
       - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
     devices:
@@ -85,9 +80,64 @@ services:
       - 5565:5555
     environment:
       - EMULATOR_DEVICE=Samsung Galaxy S6
-      - WEB_VNC=true
-      
+      - WEB_VNC=true     
     volumes:
       - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
     devices:
-      - /dev/kvm      
+      - /dev/kvm    
+  nexus4:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6086:6080
+      - 5566:5554
+      - 5567:5555
+    environment:
+      - EMULATOR_DEVICE=Nexus 4
+      - WEB_VNC=true     
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm    
+  nexus5:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6087:6080
+      - 5568:5554
+      - 5569:5555
+    environment:
+      - EMULATOR_DEVICE=Nexus 5
+      - WEB_VNC=true     
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm
+  nexus1:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6088:6080
+      - 5570:5554
+      - 5571:5555
+    environment:
+      - EMULATOR_DEVICE=Nexus One
+      - WEB_VNC=true     
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm 
+  nexusS:
+    image: budtmo/docker-android:emulator_13.0
+    privileged: true
+    ports:
+      - 6089:6080
+      - 5572:5554
+      - 5573:5555
+    environment:
+      - EMULATOR_DEVICE=Nexus S
+      - WEB_VNC=true     
+    volumes:
+      - /home/qauser/mlwallet-android.apk:/home/androidusr/mlwallet-android.apk
+    devices:
+      - /dev/kvm       
